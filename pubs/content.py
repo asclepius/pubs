@@ -51,7 +51,8 @@ def system_path(path):
 
 def _open(path, mode):
         if mode.find('b') == -1:
-            return open(system_path(path), mode, encoding='utf-8')
+            # return open(system_path(path), mode, encoding='utf-8')
+            return open(system_path(path), mode)
         else:
             return open(system_path(path), mode)
 
@@ -187,6 +188,8 @@ def edit_file(editor, path_to_file, temporary=True):
         check_file(path_to_file, fail=True)
         content = read_text_file(path_to_file)
         content = editor_input(editor, content)
+        print(content)
+        print(path_to_file)
         write_file(path_to_file, content)
     else:
         cmd = editor.split()  # this enable editor command with option, e.g. gvim -f
