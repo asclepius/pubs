@@ -97,13 +97,13 @@ class DataBroker(object):
     # notesbroker
 
     def real_notepath(self, citekey):
-        notepath = 'notesdir://{}.txt'.format(citekey)
+        notepath = 'notesdir://{}.wiki'.format(citekey)
         return self.notebroker.real_docpath(notepath)
 
     def remove_note(self, citekey, silent=True):
-        notepath = 'notesdir://{}.txt'.format(citekey)
+        notepath = 'notesdir://{}.wiki'.format(citekey)
         return self.notebroker.remove_doc(notepath, silent=silent)
 
     def rename_note(self, old_citekey, new_citekey):
-        notepath = 'notesdir://{}.txt'.format(old_citekey)
+        notepath = 'notesdir://{}.wiki'.format(old_citekey)
         return self.notebroker.rename_doc(notepath, new_citekey)
